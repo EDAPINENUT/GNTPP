@@ -24,11 +24,11 @@ Run the following commands to train the model.
 python tpp_train.py --dataset_dir ./data/{dataset}/ --hist_enc {encoder} --prob_dec {decoder}
 ```
 
-{dataset} can be replaced by [mooc, retweet, stackoverflow, yelp, synthetic_n5_c0.2].
+{dataset} can be replaced by `[mooc, retweet, stackoverflow, yelp, synthetic_n5_c0.2]`.
 
-{encoder} can be replaced by [LSTM, Attention].
+{encoder} can be replaced by `[LSTM, Attention]`.
 
-{decoder} can be replaced by [CNF, Diffusion, GAN, ScoreMatch, VAE, LogNorm, Gompt, Gaussian, Weibull, FNN, THP, SAHP].
+{decoder} can be replaced by `[CNF, Diffusion, GAN, ScoreMatch, VAE, LogNorm, Gompt, Gaussian, Weibull, FNN, THP, SAHP]`.
 
 (NOTE: The provided THP and SAHP use different type-modeling methods (type-wise intensity modelling), while others model all the types in a single sequence. So the final metric evaluation will be in a different protocol.)
 
