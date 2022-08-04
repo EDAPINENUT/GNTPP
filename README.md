@@ -50,5 +50,35 @@ For learned model, `Trainer.plot_similarity` method could provide the relations 
 If the repository is helpful to your research, please cite the following:
 
 ```
-TODO
+@article{
+lin2022GNTPP,
+title={Exploring Generative Neural Temporal Point Process},
+author={Haitao Lin and Lirong Wu and Guojiang Zhao and Pai Liu and Stan Z. Li},
+journal={Transactions on Machine Learning Research},
+year={2022},
+url={https://openreview.net/forum?id=NPfS5N3jbL},
+note={}
+}
+```
+
+or
+
+```
+@misc{lin2022GNTPP,
+  doi = {10.48550/ARXIV.2208.01874},
+  
+  url = {https://arxiv.org/abs/2208.01874},
+  
+  author={Haitao Lin and Lirong Wu and Guojiang Zhao and Pai Liu and Stan Z. Li},
+
+  keywords = {Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  
+  title = {Exploring Generative Neural Temporal Point Process},
+  
+  publisher = {arXiv},
+  
+  year = {2022},
+  
+  copyright = {Creative Commons Attribution 4.0 International}
+}
 ```
