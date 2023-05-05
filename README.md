@@ -1,7 +1,7 @@
 # Exploring Generative Neural Temporal Point Proces (GNTPP)
 
 
-This is a PyTorch implementation of GNTPP in the paper `Exploring Generative Neural Temporal Point Process' (TMLR). 
+This is a PyTorch implementation of GNTPP in the paper GNTPP: `Exploring Generative Neural Temporal Point Process' (TMLR). 
 
 
 ### Requirements
