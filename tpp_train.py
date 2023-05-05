@@ -62,7 +62,7 @@ parser.add_argument('--time_emb', type=str, metavar='NAME', default='Trigo', cho
                     help='The time embedding which is used, choosen from {}.'.format(TIME_EMB))
 parser.add_argument('--hist_enc', type=str, metavar='NAME', default='Attention', choices=HIST_ENC,
                     help='The history encoder which is used, choosen from {}.'.format(HIST_ENC))
-parser.add_argument('--prob_dec', type=str, metavar='NAME', default='THP', choices=PROB_DEC,
+parser.add_argument('--prob_dec', type=str, metavar='NAME', default='Diffusion', choices=PROB_DEC,
                     help='The probabilistic decoder which is used, choosen from {}.'.format(PROB_DEC))
 parser.add_argument('--embed_size', type=int, metavar='SIZE', default=32,
                     help='Hidden dimension for the model.')
@@ -76,6 +76,11 @@ parser.add_argument('--gpu', type=int, metavar='DEVICE', default=6,
                     help='Gpu to use for training.')
 parser.add_argument('--seed', type=int, metavar='SEED', default=42,
                     help='Random seed for training.')
+
+## diffusion
+parser.add_argument('--diff_steps', type=int, metavar='NUM', default=1000,
+                    help='Diffusion steps in conditional temporal diffusion decoder.')          
+
 
 args = parser.parse_args()
 args = vars(args)

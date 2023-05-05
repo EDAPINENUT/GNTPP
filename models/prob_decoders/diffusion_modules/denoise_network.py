@@ -4,7 +4,7 @@ from .diffusion_embedding import DiffusionEmbedding
 import numpy as np
 
 class DenoiseNet(nn.Module):
-    def __init__(self, embed_size, layer_num):
+    def __init__(self, embed_size, layer_num, diff_steps, *args, **kwargs):
         super().__init__()
         self.embed_size=embed_size
         
@@ -13,7 +13,7 @@ class DenoiseNet(nn.Module):
         self.feed_forward = nn.ModuleList([nn.Linear(embed_size, embed_size) for i in range(layer_num)])
         self.to_time = nn.Linear(embed_size, 1)
         self.activation = nn.GELU()
-        self.diffusion_time_emb = DiffusionEmbedding(embed_size=embed_size)
+        self.diffusion_time_emb = DiffusionEmbedding(embed_size=embed_size, max_steps=diff_steps + 1)
         
     def forward(self, x, t, cond):
         time_embedding = self.time_emb(x.squeeze(dim=-1))/np.sqrt(self.embed_size)

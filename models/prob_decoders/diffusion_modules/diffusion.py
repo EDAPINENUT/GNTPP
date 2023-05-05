@@ -13,9 +13,9 @@ class DiffusionDecoder(BaseProbDecoder):
                 **kwargs):
         super().__init__(embed_size, layer_num, event_type_num, mean_log_inter_time, std_log_inter_time, *args, **kwargs)
         
-        self.denoise_fn = DenoiseNet(embed_size=embed_size, layer_num=layer_num)
+        self.denoise_fn = DenoiseNet(embed_size=embed_size, layer_num=layer_num, *args, **kwargs)
         
-        self.diffusion_net = GaussianDiffusion(denoise_fn=self.denoise_fn)
+        self.diffusion_net = GaussianDiffusion(denoise_fn=self.denoise_fn, *args, **kwargs)
     
     def cumulative_risk_func(self, history_embedding, dt, sample_num=200, max_dt=5, steps=20):
         return self.empirical_cumulative_risk_func(history_embedding, dt, sample_num=sample_num, max_dt=max_dt, steps=steps)

@@ -46,6 +46,7 @@ class GaussianDiffusion(nn.Module):
         loss_type="l2",
         betas=None,
         beta_schedule="linear",
+        *args, **kwargs
     ):
         super().__init__()
         self.denoise_fn = denoise_fn

@@ -73,7 +73,7 @@ class TPPWarper(nn.Module):
         embedding_time_type = self._event_embedding(seq_dts, seq_types)
         embedding_position = self._position_embedding(seq_dts)
         
-        return embedding_time_type[...,:self.embed_size//2], embedding_time_type[...,:self.embed_size//2], embedding_position
+        return embedding_time_type[...,:self.embed_size//2], embedding_time_type[...,self.embed_size//2:], embedding_position
 
     def _transform_dt(self, seq_dts):
         """
