@@ -128,7 +128,7 @@ class VAEDecoder(BaseProbDecoder):
         dts_hat, mean, log_var =  self._forward(seq_dts_expand, history_embedding)
         
         rec_loss = (seq_dts_expand - dts_hat)**2 * seq_onehots
-        kl_loss = (- 0.5 * torch.sum(1 + log_var - mean.pow(2) - log_var.exp())) * seq_onehots
+        kl_loss = (- 0.5 * torch.sum(1 + log_var - mean.pow(2) - log_var.exp(), dim=-1)) * seq_onehots
         log_loss = (rec_loss + kl_loss).sum()
         mark_logits = self.compute_ce(history_embedding, seq_types)
         return log_loss, mark_logits
