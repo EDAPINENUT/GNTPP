@@ -270,7 +270,7 @@ class GaussianDiffusion(nn.Module):
         if self.loss_type == "l1":
             loss = torch.abs(x_recon - noise).sum()
         elif self.loss_type == "l2":
-            loss = torch.square(x_noisy - x_recon).sum()
+            loss = torch.square(x_recon - noise).sum()
         # elif self.loss_type == "huber":
         #     loss = F.smooth_l1_loss(x_recon, noise)
         else:
